@@ -46,7 +46,7 @@ The F-corona (F for Fraunhofer) is created by sunlight bouncing off dust particl
 </br>
 The E-corona (E for emission) is due to spectral emission lines produced by ions that are present in the coronal plasma; it may be observed in broad or forbidden or hot spectral emission lines and is the main source of information about the corona's composition.
 </br>
-###Physical features
+####Physical features
 
 The corona is not always evenly distributed across the surface of the sun. During periods of quiet, the corona is more or less confined to the equatorial regions, with coronal holes covering the polar regions. However, during the Sun's active periods, the corona is evenly distributed over the equatorial and polar regions, though it is most prominent in areas with sunspot activity. The solar cycle spans approximately 11 years, from solar minimum to the following minimum. Since the solar magnetic field is continually wound up due to the faster rotation of mass at the sun's equator (differential rotation), sunspot activity will be more pronounced at solar maximum where the magnetic field is more twisted. Associated with sunspots are coronal loops, loops of magnetic flux, upwelling from the solar interior. The magnetic flux pushes the hotter photosphere aside, exposing the cooler plasma below, thus creating the relatively dark sun spots.
 
