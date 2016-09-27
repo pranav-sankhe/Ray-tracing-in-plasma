@@ -52,5 +52,13 @@ The corona is not always evenly distributed across the surface of the sun. Durin
 
 Since the corona has been photographed at high resolution in the X-ray range of the spectrum by the satellite Skylab in 1973, and then later by Yohkoh and the other following space instruments, it has been seen that the structure of the corona is quite varied and complex: different zones have been immediately classified on the coronal disc. The astronomers usually distinguish several regions, as described below.
 
+- ######Active regions :
+Active regions are ensembles of loop structures connecting points of opposite magnetic polarity in the photosphere, the so-called coronal loops. They generally distribute in two zones of activity, which are parallel to the solar equator. The average temperature is between two and four million Kelvin, while the density goes from 109 to 1010 particle per cm3.
 
+- ######Large-scale structures
+Large-scale structures are very long arcs which can cover over a quarter of the solar disk but contain plasma less dense than in the coronal loops of the active regions. The large-scale structure of the corona changes over the 11-year solar cycle and becomes particularly simple during the minimum period, when the magnetic field of the Sun is almost similar to a dipolar configuration (plus a quadrupolar component).
+
+- ######Filament cavities
+Filament cavities are zones which look dark in the X-rays and are above the regions where Hα filaments are observed in the chromosphere. They were first observed in the two 1970 rocket flights which also detected coronal holes.
+Filament cavities are cooler clouds of gases (plasma) suspended above the Sun's surface by magnetic forces. The regions of intense magnetic field look dark in images because they are empty of hot plasma. 
 
