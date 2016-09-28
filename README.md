@@ -62,3 +62,21 @@ Large-scale structures are very long arcs which can cover over a quarter of the 
 Filament cavities are zones which look dark in the X-rays and are above the regions where Hα filaments are observed in the chromosphere. They were first observed in the two 1970 rocket flights which also detected coronal holes.
 Filament cavities are cooler clouds of gases (plasma) suspended above the Sun's surface by magnetic forces. The regions of intense magnetic field look dark in images because they are empty of hot plasma. 
 
+####Physics of Corona
+The matter in the external part of the solar atmosphere is in the state of plasma, at very high temperature (a few million Kelvins) and at very low density. According to the definition of plasma, it is a quasi-neutral collection of particles which exhibits a collective behaviour.
+</br>
+The composition is the same as the one in the Sun's interior, mainly hydrogen, but completely ionized, thence protons and electrons, and a small fraction of the other atoms in the same percentages as they are present in the photosphere. Even heavier metals, such as iron, are partially ionized and have lost most of the external electrons. The ionization state of a chemical element depends strictly on the temperature and is regulated by the [Saha equation](https://en.wikipedia.org/wiki/Saha_ionization_equation).
+</br> 
+The corona behaves like a gas which is very hot but very light at the same time: the pressure in the photosphere is usually only 0.1 to 0.6 Pa in active regions, while on the Earth the atmospheric pressure is about 100 kPa, approximatively a million times higher than on the solar surface. However it is not properly a gas, because it is made of charged particles, basically protons and electrons, moving at different velocities. Supposing that they have the same kinetic energy on average (for the equipartition theorem), electrons have a mass roughly 1800 times smaller than protons, therefore they acquire more velocity. Metal ions are always slower. This fact has relevant physical consequences either on radiative processes (that are very different from the photospheric radiative processes), or on thermal conduction. Furthermore, the presence of electric charges induces the generation of electric currents and high magnetic fields. [Magnetohydrodynamic waves](https://en.wikipedia.org/wiki/Magnetohydrodynamics) can also propagate in this plasma, even if it is not still clear how they can be transmitted or generated in the corona.
+
+####Radiation
+The corona emits radiation mainly in the X-rays, observable only from space.
+The plasma is transparent to its own radiation and to that one coming from below, therefore we say that it is optically-thin. The gas, in fact, is very rarefied and the photon mean free-path overcomes by far all the other length-scales, including the typical sizes of the coronal features.
+Different processes of radiation take place in the emission, due to binary collisions between plasma particles, while the interactions with the photons, coming from below; are very rare. Because the emission is due to collisions between ions and electrons, the energy emitted from a unit volume in the time unit is proportional to the squared number of particles in a unit volume, or more exactly, to the product of the electron density and proton density.
+
+
+
+Phew, :sweat: that was a hell lot of theory. credits : wikipedia and other random sources. 
+
+After having given a brief idea of Corona and its properties, now I will get to more details about the electron density profile and the refractive index of the corona.
+   
