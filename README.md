@@ -86,3 +86,75 @@ In the normal background corona, we will adopt the conventional Bambauch-Allen m
 **![1.jpg](https://lh4.googleusercontent.com/5ZLjGyqSG6xJEDCAzMaq5NVgF-v_F8tERAlEljZLv2Oy7uyo1twjYfud2vUxJtP2GnJqCKn_RfxyuRC-lRD9rxALpoeFqoW4lHfddXOlJ_GQ64pgqdtVyuphn0FWve0XCdyOkGvT)**
 
 **![2.jpg](https://lh5.googleusercontent.com/CsJG_HrZz0wYpGAg4u38suREh2inmcKRqRNUCfRz2SFrtGzS1gbwmf_J5Px93zUw76aTuWx3wXiXW3yW-mF8PvETHKViK0astRxbHeQgKIwXXxAzRtwB0FKDopMwKCdXHuPQpxMD)**
+
+Upto now (26 october) I have been able to acheive simulation of trajectory of light through a medium whose refractive index changes with x(x-axis). 
+
+Here is the code for the same : 
+
+```python
+
+import numpy as np
+import simpy 
+import matplotlib.pyplot as plt
+import sys
+
+sys.setrecursionlimit(1500)
+
+no_of_iterations = 1000             
+vec_x = np.arange(no_of_iterations)
+in_angle  = np.pi*25.0/180.0                                 #incident angle
+in_height = 10                             #The value of y co-ordinate where the ray hits the medium
+vec_y = np.zeros(no_of_iterations)
+r_index = np.ones(no_of_iterations)
+
+for i in range(1,1000) :
+	r_index[i] = r_index[i]/(1+ float(i)/1000.0)      #set the refractive index function here. 
+	
+	
+r_index[0] = 1                               #refractive index of outer medium 
+
+
+def ang_of_incidence(n):                     #decides the angle of refraction for the next iteration step 
+    if n == 1:
+    	incident_ang = np.sin(in_angle)*(r_index[0]/r_index[1]) 
+        return incident_ang
+    else:
+    	incident_ang = (r_index[n-1]/r_index[n])*ang_of_incidence(n-1) 
+        return  incident_ang
+
+def path_eq(n):                               #trajectory of ray 
+	
+	if n  == 0:
+		vec_y[n] = in_height
+		return vec_y
+		
+	else:
+		vec_y[n] = path_eq(n-1)[n-1] + np.tan(np.arcsin(ang_of_incidence(n))) 
+		return vec_y
+
+def get_slope(n):                              
+    print('slope : ' , (180/np.pi)*np.arcsin(ang_of_incidence(n)))
+
+get_slope(50)
+
+
+plt.plot(vec_x, path_eq(no_of_iterations-1))
+plt.xlabel('x')
+plt.ylabel('y')
+plt.show()
+
+
+
+
+```
+
+
+For the refractive index profile taken as example the output is as follows: 
+r_index[i] = r_index[i]/(1+ float(i)/1000.0)
+
+**![figure_1.png](https://lh6.googleusercontent.com/izlVEJMyfcWiKbhYXUT7OJE-GwYfbaypPrRaRqwgHroBvjueX1r4XPstdhoeNYKn61GR7qifTnkDoJcz4cKSzQdQcsHDdfE0obvBN4tVNP3DWwISTok6-RzV3YBye90Pf2mInKkP)**
+
+
+For (1- np.power(float(i),1.2)/1000 ) : 
+
+**![figure_2.png](https://lh3.googleusercontent.com/51DaN7z6rBRCV4z8D3kOTfkg6MZNLQIX6MiCFPfLeC1phFsRLzRRfipn5Isa0EoGnZt4eCRyaPEniM3b7GzZLR_mN_dJimz9VT5xMeBdNB2FvuwmCFjNHcC7M2FTMkYM8zpQ2QCh)**
