@@ -83,5 +83,5 @@ After having given a brief idea of Corona and its properties, now I will get to 
 In the normal background corona, we will adopt the conventional Bambauch-Allen model for the radial distribution of electron density. 
 
 
-**![image1](/home/pranav/Documents/my_projects/temp-image_of_sun/Images_for_README_file/1.jpg)**
-**![image2](/home/pranav/Documents/my_projects/temp-image_of_sun/Images_for_README_file/2.jpg)**
+**![image1](/home/pranav/Documents/my_projects/temp-image_of_sun/1.jpg)**
+**![image2](/home/pranav/Documents/my_projects/temp-image_of_sun/2.jpg)**
