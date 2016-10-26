@@ -79,4 +79,9 @@ Different processes of radiation take place in the emission, due to binary colli
 Phew, :sweat: that was a hell lot of theory. credits : wikipedia and other random sources. 
 
 After having given a brief idea of Corona and its properties, now I will get to more details about the electron density profile and the refractive index of the corona.
-   
+
+In the normal background corona, we will adopt the conventional Bambauch-Allen model for the radial distribution of electron density. 
+
+!image1[](/home/pranav/Documents/my_projects/temp-image_of_sun/Images_for_README_file/1.jpg)
+
+!image2[](/home/pranav/Documents/my_projects/temp-image_of_sun/Images_for_README_file/2.jpg)
