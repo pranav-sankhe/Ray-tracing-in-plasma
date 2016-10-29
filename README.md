@@ -143,9 +143,6 @@ plt.xlabel('x')
 plt.ylabel('y')
 plt.show()
 
-
-
-
 ```
 
 
@@ -158,3 +155,4 @@ r_index[i] = r_index[i]/(1+ float(i)/1000.0)
 For (1- np.power(float(i),1.2)/1000 ) : 
 
 **![figure_2.png](https://lh3.googleusercontent.com/51DaN7z6rBRCV4z8D3kOTfkg6MZNLQIX6MiCFPfLeC1phFsRLzRRfipn5Isa0EoGnZt4eCRyaPEniM3b7GzZLR_mN_dJimz9VT5xMeBdNB2FvuwmCFjNHcC7M2FTMkYM8zpQ2QCh)**
+
