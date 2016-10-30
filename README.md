@@ -154,5 +154,17 @@ r_index[i] = r_index[i]/(1+ float(i)/1000.0)
 
 For (1- np.power(float(i),1.2)/1000 ) : 
 
+
+Now let's start modelling of coronal enviroment  
+
 **![figure_2.png](https://lh3.googleusercontent.com/51DaN7z6rBRCV4z8D3kOTfkg6MZNLQIX6MiCFPfLeC1phFsRLzRRfipn5Isa0EoGnZt4eCRyaPEniM3b7GzZLR_mN_dJimz9VT5xMeBdNB2FvuwmCFjNHcC7M2FTMkYM8zpQ2QCh)**
 
+**![New Doc_2.jpg](https://lh5.googleusercontent.com/8DUuch-nY8gLKjy5zDdBW4jP7bGE80euzYgCO4C5Jp3wv1pCWwQWZUIJeAqpw6lam9V5vE9W5kJQb7Ep5Coo0nEFZKt4gpPdAT2UhAhoaMf8p5jTSJoIiimYBus836XXS78dCGSb)**
+
+**![New Doc_3.jpg](https://lh3.googleusercontent.com/FHbTMaDROYe-NT_S_n7m1uX_lFS_yjOfIE7n3vSqLcpqgMosxecCI3PqS-3epIPK-EGAhqmZoMc4GvEKLNzNuQO6G6cyVp-sTgdFVTZCVCw5h1G9XrwrNg9I4QPAA7UiV_y2i1EJ)**
+
+**![New Doc_4.jpg](https://lh5.googleusercontent.com/w0_gU9GhhVvVWQUi-mgwc1SY1dOcKE23L7vsX2yDV_Zo4wkrnwV70MvHi0kiw8UKE9bHGEBRA5LzZoBjT9BRsgCr5R88KD6nSHvs46DVML8qFGcwQCLs0oMep78U7RcItXN9wplU)**
+
+**![New Doc_5.jpg](https://lh3.googleusercontent.com/8_T0SL8yxl4D6XUD4ql8KyT8mASBSJODpnCNwxYLKj1SP0nCVNkCNhQFc2WN-mLwjSp5elXwLVT0azR08PA-eYi3VoXJ8LUZC6RSFzJOWUtfwK2Oj-YhxUVZEXUVOSErXuZdFD8x)**
+
+**![New Doc_6.jpg](https://lh5.googleusercontent.com/hBGZpnz1srN5rGTWyRsox5yN95ScFyYxOj0F3ToXe532mRtXu6NRdDZQUS-FtiQLk_rQ73Scq361V82TvjOM-0vMOA1HHaXMCLcd4S1yu6udMBgh70bcfbpuWstQ0bnRteikL64Q)**
