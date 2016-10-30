@@ -155,9 +155,10 @@ r_index[i] = r_index[i]/(1+ float(i)/1000.0)
 For (1- np.power(float(i),1.2)/1000 ) : 
 
 
-Now let's start modelling of coronal enviroment  
 
 **![figure_2.png](https://lh3.googleusercontent.com/51DaN7z6rBRCV4z8D3kOTfkg6MZNLQIX6MiCFPfLeC1phFsRLzRRfipn5Isa0EoGnZt4eCRyaPEniM3b7GzZLR_mN_dJimz9VT5xMeBdNB2FvuwmCFjNHcC7M2FTMkYM8zpQ2QCh)**
+
+Now let's start modelling of coronal enviroment  
 
 **![New Doc_2.jpg](https://lh5.googleusercontent.com/8DUuch-nY8gLKjy5zDdBW4jP7bGE80euzYgCO4C5Jp3wv1pCWwQWZUIJeAqpw6lam9V5vE9W5kJQb7Ep5Coo0nEFZKt4gpPdAT2UhAhoaMf8p5jTSJoIiimYBus836XXS78dCGSb)**
 
