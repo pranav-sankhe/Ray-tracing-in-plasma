@@ -147,8 +147,9 @@ plt.show()
 
 
 For the refractive index profile taken as example the output is as follows: 
+'''python
 r_index[i] = r_index[i]/(1+ float(i)/1000.0)
-
+'''
 **![figure_1.png](https://lh6.googleusercontent.com/izlVEJMyfcWiKbhYXUT7OJE-GwYfbaypPrRaRqwgHroBvjueX1r4XPstdhoeNYKn61GR7qifTnkDoJcz4cKSzQdQcsHDdfE0obvBN4tVNP3DWwISTok6-RzV3YBye90Pf2mInKkP)**
 
 
