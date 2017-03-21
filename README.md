@@ -1,4 +1,4 @@
-#Modeling 3 dimensional temperature profile of Sun
+**Modeling 3 dimensional temperature profile of Sun**
 
 Hello World :smiley:
 
@@ -23,7 +23,7 @@ The next layer is the chromosphere. The chromosphere emits a reddish glow as sup
 But the red rim can only be seen during a total solar eclipse. At other times, light from the chromosphere is usually too weak to be seen against the brighter photosphere.
 
 ##Corona
-**![Corona](https://abm-website-assets.s3.amazonaws.com/ecnmag.com/s3fs-public/embedded_image/2015/08/mt-2003-sun-corona-normal.jpg)**
+ **![Corona](https://abm-website-assets.s3.amazonaws.com/ecnmag.com/s3fs-public/embedded_image/2015/08/mt-2003-sun-corona-normal.jpg)**
 
 The third layer of the sun's atmosphere is the corona. It can only be seen during a total solar eclipse as well. It appears as white streamers or plumes of ionized gas that flow outward into space. Temperatures in the sun's corona can get as high as 3.5 million degrees F (2 million degrees C). As the gases cool, they become the solar wind.
 </br>
