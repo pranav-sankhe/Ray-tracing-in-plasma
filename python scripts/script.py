@@ -10,54 +10,45 @@ from scipy.integrate import ode
 from scipy import integrate
 from scipy.optimize import fsolve
 
-sun_radii = 696342000.0   
 freq = 18#np.power(10,6)
-sintheta = 0
 
-def Sqr_refIndex(r):
-	return  1 - 12400/(np.square(freq)*np.power(r,6))
+def sqr_ref_index(r,freq):
+	val = 1 - 38.27/np.power(r,6)
+	return val
 
-def der_refIndex(r):
-	return 6*12400/(np.square(freq)*np.power(r,7))
+def singularity(r_list):
+	for r in r_list:
+		val = sqr_ref_index(r,freq)*r*r - ray_param*ray_param	
+		if val > 0:
+			return r	
 
-def singularity():
-	d = 0
-	dist = np.linspace(0.1,5,10000)
-	count = 0 
-	for distance in dist:
-		if(Sqr_refIndex(distance) > 0 and count == 0):
-			d = distance
-			count = 1		
-	
-	return  d 	 
-	
+def DthetaDr(r):
+	val = -ray_param/r
+	val1 = sqr_ref_index(r,freq)*r*r - ray_param*ray_param	
+	val1 = np.sqrt(val1)
+	val = val/val1 
+	return val 
 
-def dydt(y,theta,b,c):
-	r, der_r = y 
-	y_der = [der_r, (74400*(1+r*r))/(r*der_r*(freq*freq*np.power(r,6)-12400)) + der_r/r ]
-	
-	return y_der
+ray_param = 3
 
-b=0
-c=0 
+r_list = np.linspace(1,5,10000)
+rCritical = singularity(r_list)
+thetaC = integrate.quad(lambda x: DthetaDr(x) , rCritical, 5)[0]
 
-y0 = [ 5*np.sin(sintheta), 0.1 ]
+radial_dist = np.linspace(rCritical,5,10000)
 
-theta = np.linspace(0.001,np.pi,1000)
+sol1 = []
+for i in range(len(radial_dist)):
+	result = integrate.quad(lambda x: DthetaDr(x) , radial_dist[i], 5)
+	print i, ' : ', result
+	sol1.append(result[0])
 
-sol = odeint(dydt, y0, theta, args=(b, c)) 
+sol2 = []
 
-var = []
-# for x in sol:
-# 	print x
-dist = np.linspace(singularity(),5,10000)
-for x in dist:
-	var.append(der_refIndex(x))
+ax = plt.subplot(111, projection='polar')    # add subplot in polar coordinates 
+ax.plot(sol1, radial_dist ,color='b', linewidth=3)
+ax.set_rmax(4)  
+ax.grid(True)  
+#ax.legend(loc='best')
 
-
-plt.plot(dist, var)
-plt.xlabel('x')
-plt.ylabel('y')
 plt.show()
-	
-
