@@ -10,7 +10,7 @@ from scipy.integrate import ode
 from scipy import integrate
 from scipy.optimize import fsolve
 
-Frequency = 100#np.power(10,6)              # Frequency of the incident ray.        
+Frequency = 10#np.power(10,6)              # Frequency of the incident ray.        
 
 
 #------------------------------------calculate refractive index-------------------------------------------------
@@ -44,37 +44,44 @@ def simulation(ray_param,freq):
 	thetaC = integrate.quad(lambda x: DthetaDr(x,ray_param,freq) , rCritical, 215)[0]
 	print "r at singularity:", rCritical, " theta at singularity:", thetaC
 
-	radial_dist_1 = np.linspace(rCritical,215,100000) # define the range of values of r
+	radial_dist_1 = np.linspace(rCritical,215,10000) # define the range of values of r
 
 	sol1 = []
 	for i in range(len(radial_dist_1)):
 		result = integrate.quad(lambda x: DthetaDr(x,ray_param,freq) , radial_dist_1[i], 215)
-		print 'calculating for ray parameter = ',ray_param,'::', i,':' ,'r:',radial_dist_1[i] , 'theta :',result[0] 
+		print 'calculating for ray parameter = ',ray_param,'::', i,':' ,'r:',radial_dist_1[i] , 'theta :',result[0] , 'at frequency', Frequency
 		sol1.append(result[0])
 
 	sol2 = []
 	for i in range(len(radial_dist_1)):
-		sol2.append(2*thetaC - sol1[i] )		
+		result = integrate.quad(lambda x: DthetaDr(x,ray_param,freq), rCritical ,radial_dist_1[i])
+		print 'calculating for ray parameter = ',ray_param,'::', i,':' ,'r:',radial_dist_1[i] , 'theta :',result[0] , 'at frequency', Frequency 
+		sol2.append(result[0] + thetaC)
+	
+	# sol3 = []
+	# for i in range(len(radial_dist_1)):
+
+	# 	sol3.append(2*thetaC - sol1[i] )		
 
 	
-	return [radial_dist_1,sol1,sol2]
+-	return [radial_dist_1,sol1,sol2]
 
-ray_param_list = np.linspace(-4.95,4.95,30)  #define the value of perpendicular distance between the starting point and sun's equator.              
-
+#ray_param_list = np.linspace(-4.95,4.95,20)  #define the value of perpendicular distance between the starting point and sun's equator             
+ray_param_list = [0.1]
 ax = plt.subplot(111, projection='polar')    # add subplot in polar coordinates 
 ax.set_rmax(4)  
 ax.grid(True)  
 
 for i in range(len(ray_param_list)):
 	array = simulation(ray_param_list[i],Frequency)
-	radial_dist = array[0]
-	sol1 = array[1]
-	sol2 = array[2]
-	  
+	radial_dist = [value for value in array[0] if value < 100]
+	sol1 = array[1][0:len(radial_dist)]
+	sol2 = array[2][0:len(radial_dist)]
+	#sol3 = array[3][0:len(radial_dist)]
 	ax.plot(sol1,radial_dist,sol2,radial_dist ,color='b', linewidth=1)
+	#ax.plot(sol1,radial_dist,sol3,radial_dist ,color='r', linewidth=1)	
 	sun_theta = np.linspace(0,2*np.pi,1000)
 	sun_r = [1]*len(sun_theta)
-	ax.set_rmax(10)
 	ax.plot(sun_theta, sun_r ,color='r', linewidth=1)
 
 plt.show()
