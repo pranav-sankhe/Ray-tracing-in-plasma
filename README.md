@@ -10,14 +10,14 @@ Hello World :smiley:
 ## Theoretical background needed to get started with the modeling : 
 To get started we will first dwell into the atmosphere of the sun and checkout what's hot there :wink:   
 
-**![Sun's Atmosphere:](https://d2gne97vdumgn3.cloudfront.net/api/file/9VmYYH9QfCAKyG9Etw5Q)**
+![Sun's Atmosphere:](https://d2gne97vdumgn3.cloudfront.net/api/file/9VmYYH9QfCAKyG9Etw5Q)
 
 The atmosphere of the sun is composed of several layers, mainly the photosphere, the chromosphere and the corona. 
 It's in these outer layers that the sun's energy, which has bubbled up from the sun's interior layers, is detected 
 as sunlight.
 
 ## Photosphere
-**![Photosphere](http://physics.weber.edu/palen/Phsx1040/images/sun-photosphere.jpg)**
+![Photosphere](http://physics.weber.edu/palen/Phsx1040/images/sun-photosphere.jpg)
 
 The lowest layer of the sun's atmosphere is the photosphere. It is about 300 miles (500 kilometers) thick. This
 layer is where the sun's energy is released as light. The photosphere is marked by bright, bubbling granules of 
@@ -31,7 +31,7 @@ the sun's surface. Solar flares produce bursts of X-rays, ultraviolet radiation,
 waves.
 
 ## Chromosphere
-**![Chromosphere](http://djoye.chez-alice.fr/images/Protu_01-02-25.jpg)**
+![Chromosphere](http://djoye.chez-alice.fr/images/Protu_01-02-25.jpg)
 
 The next layer is the chromosphere. The chromosphere emits a reddish glow as super-heated hydrogen burns off.The 
 temperature rises across the chromosphere from 4,500 degrees Kelvin to about 10,000 degrees Kelvin. The chromosphere 
@@ -44,8 +44,8 @@ But the red rim can only be seen during a total solar eclipse. At other times, l
 usually too weak to be seen against the brighter photosphere.
 
 ## Corona
- **![Corona](https://abm-website-assets.s3.amazonaws.com/ecnmag.com/s3fs-public/embedded_image/2015/08/
- mt-2003-sun-corona-normal.jpg)**
+
+![Corona](https://abm-website-assets.s3.amazonaws.com/ecnmag.com/s3fs-public/embedded_image/2015/08mt-2003-sun-corona-normal.jpg)
 
 The third layer of the sun's atmosphere is the corona. It can only be seen during a total solar eclipse as well. It 
 appears as white streamers or plumes of ionized gas that flow outward into space. Temperatures in the sun's corona 
@@ -171,11 +171,11 @@ In the normal background corona, we will adopt the conventional Bambauch-Allen m
 electron density. 
 
 
-**![1.jpg](https://lh4.googleusercontent.com/5ZLjGyqSG6xJEDCAzMaq5NVgF-v_F8tERAlEljZLv2Oy7uyo1twjYfud2vUxJtP2GnJqCKn_
-RfxyuRC-lRD9rxALpoeFqoW4lHfddXOlJ_GQ64pgqdtVyuphn0FWve0XCdyOkGvT)**
+![1.jpg](https://lh4.googleusercontent.com/5ZLjGyqSG6xJEDCAzMaq5NVgF-v_F8tERAlEljZLv2Oy7uyo1twjYfud2vUxJtP2GnJqCKn_
+RfxyuRC-lRD9rxALpoeFqoW4lHfddXOlJ_GQ64pgqdtVyuphn0FWve0XCdyOkGvT)
 
-**![2.jpg](https://lh5.googleusercontent.com/CsJG_HrZz0wYpGAg4u38suREh2inmcKRqRNUCfRz2SFrtGzS1gbwmf_J5Px93zUw76aTuWx3
-wXiXW3yW-mF8PvETHKViK0astRxbHeQgKIwXXxAzRtwB0FKDopMwKCdXHuPQpxMD)**
+![2.jpg](https://lh5.googleusercontent.com/CsJG_HrZz0wYpGAg4u38suREh2inmcKRqRNUCfRz2SFrtGzS1gbwmf_J5Px93zUw76aTuWx3
+wXiXW3yW-mF8PvETHKViK0astRxbHeQgKIwXXxAzRtwB0FKDopMwKCdXHuPQpxMD)
 
 Upto now (26 october) I have been able to acheive simulation of trajectory of light through a medium whose 
 refractive index changes with x(x-axis). 
@@ -248,23 +248,22 @@ r_index[i] = r_index[i]/(1+ float(i)/1000.0)
 For (1- np.power(float(i),1.2)/1000 ) : 
 
 
-
-**![figure_2.png](https://lh3.googleusercontent.com/51DaN7z6rBRCV4z8D3kOTfkg6MZNLQIX6MiCFPfLeC1phFsRLzRRfipn5Isa0EoGn
-Zt4eCRyaPEniM3b7GzZLR_mN_dJimz9VT5xMeBdNB2FvuwmCFjNHcC7M2FTMkYM8zpQ2QCh)**
+![figure_2.png](https://lh3.googleusercontent.com/51DaN7z6rBRCV4z8D3kOTfkg6MZNLQIX6MiCFPfLeC1phFsRLzRRfipn5Isa0EoGn
+Zt4eCRyaPEniM3b7GzZLR_mN_dJimz9VT5xMeBdNB2FvuwmCFjNHcC7M2FTMkYM8zpQ2QCh)
 
 Now let's start modelling of coronal enviroment  
 
-**![New Doc_2.jpg](https://lh5.googleusercontent.com/8DUuch-nY8gLKjy5zDdBW4jP7bGE80euzYgCO4C5Jp3wv1pCWwQWZUIJeAqpw6la
-m9V5vE9W5kJQb7Ep5Coo0nEFZKt4gpPdAT2UhAhoaMf8p5jTSJoIiimYBus836XXS78dCGSb)**
+![New Doc_2.jpg](https://lh5.googleusercontent.com/8DUuch-nY8gLKjy5zDdBW4jP7bGE80euzYgCO4C5Jp3wv1pCWwQWZUIJeAqpw6la
+m9V5vE9W5kJQb7Ep5Coo0nEFZKt4gpPdAT2UhAhoaMf8p5jTSJoIiimYBus836XXS78dCGSb)
 
-**![New Doc_3.jpg](https://lh3.googleusercontent.com/FHbTMaDROYe-NT_S_n7m1uX_lFS_yjOfIE7n3vSqLcpqgMosxecCI3PqS-3epIPK
--EGAhqmZoMc4GvEKLNzNuQO6G6cyVp-sTgdFVTZCVCw5h1G9XrwrNg9I4QPAA7UiV_y2i1EJ)**
+![New Doc_3.jpg](https://lh3.googleusercontent.com/FHbTMaDROYe-NT_S_n7m1uX_lFS_yjOfIE7n3vSqLcpqgMosxecCI3PqS-3epIPK
+-EGAhqmZoMc4GvEKLNzNuQO6G6cyVp-sTgdFVTZCVCw5h1G9XrwrNg9I4QPAA7UiV_y2i1EJ)
 
-**![New Doc_4.jpg](https://lh5.googleusercontent.com/w0_gU9GhhVvVWQUi-mgwc1SY1dOcKE23L7vsX2yDV_Zo4wkrnwV70MvHi0kiw8UK
-E9bHGEBRA5LzZoBjT9BRsgCr5R88KD6nSHvs46DVML8qFGcwQCLs0oMep78U7RcItXN9wplU)**
+![New Doc_4.jpg](https://lh5.googleusercontent.com/w0_gU9GhhVvVWQUi-mgwc1SY1dOcKE23L7vsX2yDV_Zo4wkrnwV70MvHi0kiw8UK
+E9bHGEBRA5LzZoBjT9BRsgCr5R88KD6nSHvs46DVML8qFGcwQCLs0oMep78U7RcItXN9wplU)
 
-**![New Doc_5.jpg](https://lh3.googleusercontent.com/8_T0SL8yxl4D6XUD4ql8KyT8mASBSJODpnCNwxYLKj1SP0nCVNkCNhQFc2WN-mLw
-jSp5elXwLVT0azR08PA-eYi3VoXJ8LUZC6RSFzJOWUtfwK2Oj-YhxUVZEXUVOSErXuZdFD8x)**
+![New Doc_5.jpg](https://lh3.googleusercontent.com/8_T0SL8yxl4D6XUD4ql8KyT8mASBSJODpnCNwxYLKj1SP0nCVNkCNhQFc2WN-mLw
+jSp5elXwLVT0azR08PA-eYi3VoXJ8LUZC6RSFzJOWUtfwK2Oj-YhxUVZEXUVOSErXuZdFD8x)
 
-**![New Doc_6.jpg](https://lh5.googleusercontent.com/hBGZpnz1srN5rGTWyRsox5yN95ScFyYxOj0F3ToXe532mRtXu6NRdDZQUS-FtiQL
-k_rQ73Scq361V82TvjOM-0vMOA1HHaXMCLcd4S1yu6udMBgh70bcfbpuWstQ0bnRteikL64Q)**
+![New Doc_6.jpg](https://lh5.googleusercontent.com/hBGZpnz1srN5rGTWyRsox5yN95ScFyYxOj0F3ToXe532mRtXu6NRdDZQUS-FtiQL
+k_rQ73Scq361V82TvjOM-0vMOA1HHaXMCLcd4S1yu6udMBgh70bcfbpuWstQ0bnRteikL64Q)
