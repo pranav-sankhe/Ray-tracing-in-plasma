@@ -45,7 +45,7 @@ usually too weak to be seen against the brighter photosphere.
 
 ## Corona
 
-![Corona](https://abm-website-assets.s3.amazonaws.com/ecnmag.com/s3fs-public/embedded_image/2015/08mt-2003-sun-corona-normal.jpg)
+![Corona](https://abm-website-assets.s3.amazonaws.com/ecnmag.com/s3fs-public/embedded_image/2015/08/mt-2003-sun-corona-normal.jpg)
 
 The third layer of the sun's atmosphere is the corona. It can only be seen during a total solar eclipse as well. It 
 appears as white streamers or plumes of ionized gas that flow outward into space. Temperatures in the sun's corona 
@@ -161,9 +161,6 @@ between ions and electrons, the energy emitted from a unit volume in the time un
 number of particles in a unit volume, or more exactly, to the product of the electron density and proton density.
 
 
-
-Phew, :sweat: that was a hell lot of theory. credits : wikipedia and other random sources. 
-
 After having given a brief idea of Corona and its properties, now I will get to more details about the electron 
 density profile and the refractive index of the corona.
 
@@ -171,14 +168,7 @@ In the normal background corona, we will adopt the conventional Bambauch-Allen m
 electron density. 
 
 
-![1.jpg](https://lh4.googleusercontent.com/5ZLjGyqSG6xJEDCAzMaq5NVgF-v_F8tERAlEljZLv2Oy7uyo1twjYfud2vUxJtP2GnJqCKn_
-RfxyuRC-lRD9rxALpoeFqoW4lHfddXOlJ_GQ64pgqdtVyuphn0FWve0XCdyOkGvT)
-
-![2.jpg](https://lh5.googleusercontent.com/CsJG_HrZz0wYpGAg4u38suREh2inmcKRqRNUCfRz2SFrtGzS1gbwmf_J5Px93zUw76aTuWx3
-wXiXW3yW-mF8PvETHKViK0astRxbHeQgKIwXXxAzRtwB0FKDopMwKCdXHuPQpxMD)
-
-Upto now (26 october) I have been able to acheive simulation of trajectory of light through a medium whose 
-refractive index changes with x(x-axis). 
+This is the code which plots the trajectory of ray given a refractive index through a rectangular slab. 
 
 Here is the code for the same : 
 
@@ -238,11 +228,8 @@ plt.show()
 
 
 For the refractive index profile taken as example the output is as follows: 
-'''python
-r_index[i] = r_index[i]/(1+ float(i)/1000.0)
-'''
-**![figure_1.png](https://lh6.googleusercontent.com/izlVEJMyfcWiKbhYXUT7OJE-GwYfbaypPrRaRqwgHroBvjueX1r4XPstdhoeNYKn6
-1GR7qifTnkDoJcz4cKSzQdQcsHDdfE0obvBN4tVNP3DWwISTok6-RzV3YBye90Pf2mInKkP)**
+
+\\[ n = { 1 \over { 1 + x\over 1000 } } \\]
 
 
 For (1- np.power(float(i),1.2)/1000 ) : 
