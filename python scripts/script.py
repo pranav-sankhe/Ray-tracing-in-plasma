@@ -13,7 +13,7 @@ import pyttsx
 import cv2
 
 
-Frequency = 100              # Frequency of the incident ray.        
+Frequency = 100000              # Frequency of the incident ray.        
 Solar_radius = 695700000                   # in metres  
 Te = np.power(10,6)
 
@@ -23,7 +23,6 @@ def speak(speech):
     engine.say(speech)
     engine.runAndWait()
 	
-
 #------------------------------------Electron density-------------------------------------------------
 
 def eDensity(r):
@@ -96,6 +95,7 @@ def lineIntegral(r,ray_param,freq):
 def opticalDepth(r1,r2,freq,ray_param):
 	integral = integrate.quad(lambda x: lineIntegral(x,ray_param,freq*np.power(10,6)), r1 ,r2)[0]
 	tau = (Solar_radius*integral)/(np.square(freq*np.power(10,6))*np.power(Te,1.5)*np.power(10,11)) 
+	print "integral",integral
 	return tau	
 
 #-----------------------------------calculate electron Temperature------------------------------------------
@@ -113,7 +113,7 @@ def electron_Temp(r):
 		print "CHROMOSPHERE"
 		temp = 3700 + 1593625.498*(r-1.0005)
 	if r >1.00301 and r < 1.00316:
-		#speak("transition region")
+		speak("transition region")
 		print "TRANSITION REGION"
 		temp = 7700 + 6615333333*(r-1.00301)
 	if r > 1.00316:
@@ -129,8 +129,8 @@ def brightness_temp(freq,ray_param):
 	thetaC = integrate.quad(lambda x: DthetaDr(x,ray_param,freq) , rCritical, 215)[0]
 	print "r at singularity:", rCritical, " theta at singularity:", thetaC
 
-	radial_dist1 = np.linspace(rCritical,5,10000) # define the range of values of r
-	radial_dist2 = np.linspace(5,rCritical,10000) # define the range of values of r
+	radial_dist1 = np.linspace(rCritical,2,1000) # define the range of values of r
+	radial_dist2 = np.linspace(2,rCritical,1000) # define the range of values of r
 
 	observed_temp = 0 	
 	background_Temp = 0
@@ -138,19 +138,22 @@ def brightness_temp(freq,ray_param):
 	for i in range(len(radial_dist2)-1):	 
 		tau = opticalDepth(radial_dist2[i+1],radial_dist2[i],freq,ray_param)
 		observed_temp = background_Temp*np.exp(-tau) + electron_Temp(radial_dist2[i+1])*(1-np.exp(-tau)) 
-		print i, ": running from 5 to Rc. Currently r1 = ",radial_dist2[i+1],"r2=",radial_dist2[i],'ray parameter=',ray_param, "tau=",tau,"temp =", observed_temp 
+		print tau, radial_dist2[i]
+		#print i, ": running from 5 to Rc. Currently r1 = ",radial_dist2[i+1],"r2=",radial_dist2[i],'ray parameter=',ray_param, "tau=",tau,"temp =", observed_temp 
 		#print background_Temp,electron_Temp(radial_dist2[i+1]),np.exp(-tau),electron_Temp(radial_dist2[i+1])*(1-np.exp(-tau)) 
 		background_Temp = observed_temp	 
 	 
 	for i in range(len(radial_dist1)-1):
-		print i, ": running from Rc to 5. Currently r1 = ",radial_dist1[i],"r2=",radial_dist1[i+1],'ray parameter = ', ray_param, "tau=",tau, "temp =", observed_temp
+		#print i, ": running from Rc to 5. Currently r1 = ",radial_dist1[i],"r2=",radial_dist1[i+1],'ray parameter = ', ray_param, "tau=",tau, "temp =", observed_temp
 		tau = opticalDepth(radial_dist1[i],radial_dist1[i+1],freq,ray_param)
+		print tau, radial_dist1[i]
 		observed_temp = background_Temp*np.exp(-tau) + electron_Temp(radial_dist1[i+1])*(1-np.exp(-tau)) 
 		background_Temp = observed_temp	 
 
 	print "Brightness temperature" ,observed_temp
 	return observed_temp
 	
+
 
 #=================================================================================================================
 def plot_trajectory(freq,param_list):
@@ -185,7 +188,8 @@ def tempProfile(freq,param_list):
 	# for radius in radii
 	# 	cv2.circle(img,(447,63), 63, (0,0,255), -1)
 
-ray_param_list = np.linspace(0,4.95,100)  #define the value of perpendicular distance between the starting point and sun's equator           
-#ray_param_list = [0]
+#ray_param_list = np.linspace(0,4.95,100)  #define the value of perpendicular distance between the starting point and sun's equator           
+ray_param_list = [1]
+
 tempProfile(Frequency,ray_param_list)
 #plot_trajectory(Frequency,ray_param_list)
