@@ -36,7 +36,7 @@ waves.
 The next layer is the chromosphere. The chromosphere emits a reddish glow as super-heated hydrogen burns off.The 
 temperature rises across the chromosphere from 4,500 degrees Kelvin to about 10,000 degrees Kelvin. The chromosphere 
 is thought to be heated by convection within the underlying photosphere. As gases churn in the photosphere, 
-theyproduce shock waves that heat the surrounding gas and send it piercing through the chromosphere in millions of 
+they produce shock waves that heat the surrounding gas and send it piercing through the chromosphere in millions of 
 tiny spikes of hot gas called spicules. Each spicule rises to approximately 3,000 miles (5,000 kilometers) above the 
 photosphere and lasts only a few minutes. Spicules may also follow along magnetic field lines of the sun, which are 
 made by the movements of gases inside the sun. 
