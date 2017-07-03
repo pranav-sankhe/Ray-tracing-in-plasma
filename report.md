@@ -3,7 +3,7 @@ layout: post
 comments: true
 
 Title: Modeling Temperature profile of Sun at Microwave and Radio frequencies  
-author: Pranav Sankhe, Krishna Subramani 
+author: Pranav Sankhe 
 category: [Informative]
 tags: [Sun,Corona,Radiative heat transfer]
 
