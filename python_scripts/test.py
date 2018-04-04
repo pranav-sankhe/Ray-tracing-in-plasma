@@ -1,19 +1,21 @@
 from __future__ import division 
 import numpy as np
+# import simpy 
 import matplotlib.pyplot as plt
 import sys
 import math 
+#from sympy import *
 from scipy.integrate import odeint
 from scipy.integrate import ode
 from scipy import integrate
 from scipy.optimize import fsolve
-#import pyttsx
+# import pyttsx
 import pandas as pd 
 # import cv2
 
 
-FREQUENCY = 400            # FREQUENCY of the incident ray.        
-SOLAR_RADIUS = 695700000                   # in metres  
+Frequency = 100             # Frequency of the incident ray.        
+Solar_radius = 695700000                   # in metres  
 Te = np.power(10,6)
 
 #------------------------------------Voice debugging-------------------------------------------------
@@ -54,26 +56,31 @@ def DthetaDr(r,ray_param,freq):
 def ray_trajectory(ray_param,freq):
 	
 	print "calculating r and theta at the singularity point"
-	r_list = np.linspace(1,5,1000)
+	r_list = np.linspace(1,5,10000)
 	rCritical = singularity(r_list,ray_param,freq)
 	print rCritical
 	thetaC = integrate.quad(lambda x: DthetaDr(x,ray_param,freq) , rCritical, 215)[0]
 	print "r at singularity:", rCritical, " theta at singularity:", thetaC
 
 	radial_dist_1 = np.linspace(rCritical,215,1000) # define the range of values of r
-	#radial_dist_2 = np.linspace(215,rCritical,1000)
+
 	sol1 = []
 	for i in range(len(radial_dist_1)):
 		result = integrate.quad(lambda x: DthetaDr(x,ray_param,freq) , radial_dist_1[i], 215)
-		print 'calculating for ray parameter = ',ray_param,'::', i,':' ,'r:',radial_dist_1[i] , 'theta :',result[0] , 'at frequency', FREQUENCY
+		print 'calculating for ray parameter = ',ray_param,'::', i,':' ,'r:',radial_dist_1[i] , 'theta :',result[0] , 'at frequency', Frequency
 		sol1.append(result[0])
 
 	sol2 = []
 	for i in range(len(radial_dist_1)):
 		result = integrate.quad(lambda x: DthetaDr(x,ray_param,freq), rCritical ,radial_dist_1[i])
-		print 'calculating for ray parameter = ',ray_param,'::', i,':' ,'r:',radial_dist_1[i] , 'theta :',result[0] , 'at frequency', FREQUENCY 
+		print 'calculating for ray parameter = ',ray_param,'::', i,':' ,'r:',radial_dist_1[i] , 'theta :',result[0] , 'at frequency', Frequency 
 		sol2.append(result[0] + thetaC)
 	
+	# sol3 = []
+	# for i in range(len(radial_dist_1)):
+
+	# 	sol3.append(2*thetaC - sol1[i] )		
+	print radial_dist_1, sol1, sol2
 	return [radial_dist_1,sol1,sol2]
 
 #-----------------------------------calculate integral for optical depth-----------------------------
@@ -88,7 +95,7 @@ def lineIntegral(r,ray_param,freq):
 #-----------------------------------calculate optical depth------------------------------------------
 def opticalDepth(r1,r2,freq,ray_param):
 	integral = integrate.quad(lambda x: lineIntegral(x,ray_param,freq*np.power(10,6)), r1 ,r2)[0]
-	tau = (SOLAR_RADIUS*integral)/(np.square(freq*np.power(10,6))*np.power(Te,1.5)*np.power(10,11)) 
+	tau = (Solar_radius*integral)/(np.square(freq*np.power(10,6))*np.power(Te,1.5)*np.power(10,11)) 
 	return tau	
 
 #-----------------------------------calculate electron Temperature------------------------------------------
@@ -122,8 +129,8 @@ def brightness_temp(freq,ray_param):
 	thetaC = integrate.quad(lambda x: DthetaDr(x,ray_param,freq) , rCritical, 215)[0]
 	print "r at singularity:", rCritical, " theta at singularity:", thetaC
 
-	radial_dist1 = np.linspace(rCritical,5,1000) # define the range of values of r
-	radial_dist2 = np.linspace(5,rCritical,1000) # define the range of values of r
+	radial_dist1 = np.linspace(rCritical,5,10000) # define the range of values of r
+	radial_dist2 = np.linspace(5,rCritical,10000) # define the range of values of r
 
 	observed_temp = 0 	
 	background_Temp = 0
@@ -151,24 +158,23 @@ def plot_trajectory(freq,param_list):
 	
 	ray_param_list = param_list
 	ax = plt.subplot(111, projection='polar')    # add subplot in polar coordinates 
-	ax.set_rmax(10)  
+	# ax.set_rmax(4)  
 	ax.grid(True)  
 
-	for i in range(1):
+	for i in range(len(ray_param_list)):
 		array = ray_trajectory(ray_param_list[i],freq)
 		radial_dist = [value for value in array[0] if value < 10]
 		sol1 = array[1][0:len(radial_dist)]
 		sol2 = array[2][0:len(radial_dist)]
-		print radial_dist
-		print sol1
-		print sol2
-		sol1 = np.array(sol1)
+		
+
+		sol1 = abs(np.array(sol1))
 		sol2 = np.array(sol2)
 		radial_dist = np.array(radial_dist)
-		ax.plot(radial_dist,sol1, color='b', linewidth=1)
-		sun_theta = np.linspace(0,2*np.pi,1000)
-		sun_r = [1]*len(sun_theta)
-		ax.plot(sun_theta, sun_r ,color='r', linewidth=1)
+		ax.plot(radial_dist,sol1,radial_dist,sol2,color='b', linewidth=1)
+		# sun_theta = np.linspace(0,2*np.pi,1000)
+		# sun_r = [1]*len(sun_theta)
+		# ax.plot(sun_theta, sun_r ,color='r', linewidth=1)
 
 	plt.show()
 
@@ -182,20 +188,16 @@ def tempProfile(freq,param_list):
 	dataframe = pd.DataFrame()
 	dataframe['a'] = param_list	
 	dataframe['temp'] = observed_temp
-	#dataframe.to_csv('result_18MC.csv')
+	dataframe.to_csv('result_18MC.csv')
 	plt.plot(param_list, observed_temp)
-	plt.xlabel('a')
-	plt.ylabel('Temperature (in Kelvin)')
-	plt.title('Frequency = 400 MegaHertz')
 	plt.show()
-
 	return observed_temp	
 	# img = np.zeros((512,512,3), np.uint8)
 	# for radius in radii
 	# 	cv2.circle(img,(447,63), 63, (0,0,255), -1)
 
-ray_param_list = np.linspace(0,4.95,50)  #define the value of perpendicular distance between the starting point and sun's equator           
-# ray_param_list = [0.5]
+# ray_param_list = np.linspace(-4.95,4.95,100)  #define the value of perpendicular distance between the starting point and sun's equator           
+ray_param_list = [1]
 
-tempProfile(FREQUENCY,ray_param_list)
-# plot_trajectory(FREQUENCY,ray_param_list)
+# tempProfile(Frequency,ray_param_list)
+plot_trajectory(Frequency,ray_param_list)

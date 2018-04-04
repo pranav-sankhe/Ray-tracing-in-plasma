@@ -31,7 +31,7 @@ structure of the magnetic fields in the atmosphere.
 
 ### Sun                                 
 
-he Sun of our solar system is a typical star of intermediate size and luminosity. Its radius is about
+The Sun of our solar system is a typical star of intermediate size and luminosity. Its radius is about
 696000 km, and it rotates with a period that increases with latitude from 25 days at the equator to 36 days
 at poles. For practical reasons, the period is often taken to be 27 days. Its mass is about 2 x 1030 kg,
 consisting mainly of hydrogen (90%) and helium (10%). The Sun emits radio waves, X-rays, and
@@ -138,7 +138,7 @@ The value of theta is give by :
 ![theta_integ.png](https://github.com/sabSAThai/Rate-racing-in-plasma/blob/master/images/theta_integ.png)
 
 
-This is the python script which simulates the sun's atmosphere and plots the trajectory of the rays. [Click here for the code](https://github.com/sabSAThai/Rate-racing-in-plasma/python_scripts/script.py)
+This is the python script which simulates the sun's atmosphere and plots the trajectory of the rays. [Click here for the code](https://github.com/sabSAThai/Rate-racing-in-plasma/blob/master/python_scripts/script.py)
 
 Here are the simualtion results : 
 
