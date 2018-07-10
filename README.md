@@ -1,14 +1,3 @@
-<!doctype html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" media="all" href="normalize.css">
-    <link rel="stylesheet" media="all" href="core.css">
-    <link rel="stylesheet" media="all" href="style.css">
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</head>
-<body data-document>&nbsp;</body>
-</html>
 # Ray Tracing in Solar Plasma and Evaluating Brightness Temperature at Low Frequencies
 
 
@@ -236,6 +225,8 @@ plt.show()
 
 For the refractive index profile taken as example the output is as follows: 
 
-$$ n = \frac{1}{ 1 + \frac{x}{1000} } $$
 ![New Doc_2.jpg](./images/slab_1.png)
 
+
+
+Further details can be found here: [Click Here](https://github.com/sabSAThai/Ray-tracing-in-plasma/blob/master/report/paper/main.pdf)
