@@ -1,13 +1,18 @@
-# Modeling 3 dimensional temperature profile of Sun
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" media="all" href="normalize.css">
+    <link rel="stylesheet" media="all" href="core.css">
+    <link rel="stylesheet" media="all" href="style.css">
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body data-document>&nbsp;</body>
+</html>
+# Ray Tracing in Solar Plasma and Evaluating Brightness Temperature at Low Frequencies
 
-Hello World :smiley:
 
-## Problem Statement : Model the sun's temperature profile in various frequencies.        
-
-## Approach :  
-
-
-## Theoretical background needed to get started with the modeling : 
+## Solar Atmosphere 
 To get started we will first dwell into the atmosphere of the sun and checkout what's hot there :wink:   
 
 ![Sun's Atmosphere:](https://d2gne97vdumgn3.cloudfront.net/api/file/9VmYYH9QfCAKyG9Etw5Q)
@@ -16,7 +21,7 @@ The atmosphere of the sun is composed of several layers, mainly the photosphere,
 It's in these outer layers that the sun's energy, which has bubbled up from the sun's interior layers, is detected 
 as sunlight.
 
-## Photosphere
+### Photosphere
 ![Photosphere](http://physics.weber.edu/palen/Phsx1040/images/sun-photosphere.jpg)
 
 The lowest layer of the sun's atmosphere is the photosphere. It is about 300 miles (500 kilometers) thick. This
@@ -30,7 +35,7 @@ The photosphere is also the source of solar flares: tongues of fire that extend 
 the sun's surface. Solar flares produce bursts of X-rays, ultraviolet radiation, electromagnetic radiation and radio 
 waves.
 
-## Chromosphere
+### Chromosphere
 ![Chromosphere](http://djoye.chez-alice.fr/images/Protu_01-02-25.jpg)
 
 The next layer is the chromosphere. The chromosphere emits a reddish glow as super-heated hydrogen burns off.The 
@@ -43,7 +48,7 @@ made by the movements of gases inside the sun.
 But the red rim can only be seen during a total solar eclipse. At other times, light from the chromosphere is 
 usually too weak to be seen against the brighter photosphere.
 
-## Corona
+### Corona
 
 ![Corona](https://abm-website-assets.s3.amazonaws.com/ecnmag.com/s3fs-public/embedded_image/2015/08/mt-2003-sun-corona-normal.jpg)
 
@@ -68,7 +73,7 @@ or why the surface of the sun is not heated by the hot corona. But that’s the 
 always some big mystery just waiting to be solved.
 </br>
 
-## More about Corona  
+#### More about Corona  
 The high temperature of the Sun's corona gives it unusual spectral features, which led some in the 19th century to 
 suggest that it contained a previously unknown element, "coronium". Instead, these spectral features have since been 
 explained by highly ionized iron (Fe-XIV). Bengt Edlén, following the work of Grotrian (1939), first identified the 
@@ -92,7 +97,7 @@ plasma; it may be observed in broad or forbidden or hot spectral emission lines 
 information about the corona's composition.
 </br>
 
-#### Physical features
+##### Physical features
 
 The corona is not always evenly distributed across the surface of the sun. During periods of quiet, the corona is 
 more or less confined to the equatorial regions, with coronal holes covering the polar regions. However, during the 
@@ -127,7 +132,7 @@ in the chromosphere. They were first observed in the two 1970 rocket flights whi
 Filament cavities are cooler clouds of gases (plasma) suspended above the Sun's surface by magnetic forces. The 
 regions of intense magnetic field look dark in images because they are empty of hot plasma. 
 
-#### Physics of Corona
+###### Physics of Corona
 The matter in the external part of the solar atmosphere is in the state of plasma, at very high temperature (a few 
 million Kelvins) and at very low density. According to the definition of plasma, it is a quasi-neutral collection of 
 particles which exhibits a collective behaviour.
@@ -150,7 +155,7 @@ on thermal conduction. Furthermore, the presence of electric charges induces the
 high magnetic fields. [Magnetohydrodynamic waves](https://en.wikipedia.org/wiki/Magnetohydrodynamics) can also 
 propagate in this plasma, even if it is not still clear how they can be transmitted or generated in the corona.
 
-#### Radiation
+###### Radiation
 The corona emits radiation mainly in the X-rays, observable only from space.
 The plasma is transparent to its own radiation and to that one coming from below, therefore we say that it is 
 optically-thin. The gas, in fact, is very rarefied and the photon mean free-path overcomes by far all the other 
@@ -161,13 +166,15 @@ between ions and electrons, the energy emitted from a unit volume in the time un
 number of particles in a unit volume, or more exactly, to the product of the electron density and proton density.
 
 
+## Ray Tracing 
+
 After having given a brief idea of Corona and its properties, now I will get to more details about the electron 
 density profile and the refractive index of the corona.
 
 In the normal background corona, we will adopt the conventional Bambauch-Allen model for the radial distribution of 
 electron density. 
 
-
+To start with, I modelled trajectory of a ray propagating through a rectangular slab of a given refractive index. 
 This is the code which plots the trajectory of ray given a refractive index through a rectangular slab. 
 
 Here is the code for the same : 
@@ -229,28 +236,6 @@ plt.show()
 
 For the refractive index profile taken as example the output is as follows: 
 
-\\[ n = { 1 \over { 1 + x\over 1000 } } \\]
+$$ n = \frac{1}{ 1 + \frac{x}{1000} } $$
+![New Doc_2.jpg](./images/slab_1.png)
 
-
-For (1- np.power(float(i),1.2)/1000 ) : 
-
-
-![figure_2.png](https://lh3.googleusercontent.com/51DaN7z6rBRCV4z8D3kOTfkg6MZNLQIX6MiCFPfLeC1phFsRLzRRfipn5Isa0EoGn
-Zt4eCRyaPEniM3b7GzZLR_mN_dJimz9VT5xMeBdNB2FvuwmCFjNHcC7M2FTMkYM8zpQ2QCh)
-
-Now let's start modelling of coronal enviroment  
-
-![New Doc_2.jpg](https://lh5.googleusercontent.com/8DUuch-nY8gLKjy5zDdBW4jP7bGE80euzYgCO4C5Jp3wv1pCWwQWZUIJeAqpw6la
-m9V5vE9W5kJQb7Ep5Coo0nEFZKt4gpPdAT2UhAhoaMf8p5jTSJoIiimYBus836XXS78dCGSb)
-
-![New Doc_3.jpg](https://lh3.googleusercontent.com/FHbTMaDROYe-NT_S_n7m1uX_lFS_yjOfIE7n3vSqLcpqgMosxecCI3PqS-3epIPK
--EGAhqmZoMc4GvEKLNzNuQO6G6cyVp-sTgdFVTZCVCw5h1G9XrwrNg9I4QPAA7UiV_y2i1EJ)
-
-![New Doc_4.jpg](https://lh5.googleusercontent.com/w0_gU9GhhVvVWQUi-mgwc1SY1dOcKE23L7vsX2yDV_Zo4wkrnwV70MvHi0kiw8UK
-E9bHGEBRA5LzZoBjT9BRsgCr5R88KD6nSHvs46DVML8qFGcwQCLs0oMep78U7RcItXN9wplU)
-
-![New Doc_5.jpg](https://lh3.googleusercontent.com/8_T0SL8yxl4D6XUD4ql8KyT8mASBSJODpnCNwxYLKj1SP0nCVNkCNhQFc2WN-mLw
-jSp5elXwLVT0azR08PA-eYi3VoXJ8LUZC6RSFzJOWUtfwK2Oj-YhxUVZEXUVOSErXuZdFD8x)
-
-![New Doc_6.jpg](https://lh5.googleusercontent.com/hBGZpnz1srN5rGTWyRsox5yN95ScFyYxOj0F3ToXe532mRtXu6NRdDZQUS-FtiQL
-k_rQ73Scq361V82TvjOM-0vMOA1HHaXMCLcd4S1yu6udMBgh70bcfbpuWstQ0bnRteikL64Q)
